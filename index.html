@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name= "viewport" content= "width=device-width" >
+		<title>Привет</title>
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="icon" type="image/png" href="images/settings.png">
+		<script src="scripts/clipboard.min.js"></script>
+  <script src="https://webasr.yandex.net/jsapi/v1/webspeechkit.js"
+   type="text/javascript">
+  </script>
+  <script>
+  </script>
+	</head>
+	<body id="body" style="display: none; opacity: 0;" onload="getW(); setTimeout(function () {
+		// .style.display = 'none';
+		openSettings(document.getElementById('hint'), 30, 'block', false, true);
+	}, 5000);
+	openSettings(document.body, 50, 'block', false, true);">
+
+		<img src="images/settings.png" id="setimg" onclick="openSettings(document.getElementById('settings'), 6, 'block', true);">
+
+		<div id="hint" style="opacity: 1;">
+			<p>Включить синтез речи и выбрать словари можно нажав на кнопку в левом верхнем углу страницы</p>
+		</div>
+		
+		<div id="settings" style="opacity: 0; display: none;">
+			<label class="bld">Словарь прилагательных</label><br><!-- <br> -->
+			<input type="radio" name="pril" value="pril_rus"><label>Обычный</label><br>
+			<input checked type="radio" name="pril" value="pril_rus_min"><label>Минимальный</label><br><br>
+			<label class="bld">Словарь существительных</label><br><!-- <br> -->
+			<input type="radio" name="word" value="word_rus"><label>Обычный</label><br>
+			<input checked type="radio" name="word" value="word_rus_min"><label>Минимальный</label><br>	
+			<br>
+			<input  type="checkbox" name="forExample"><label class="bld">Например</label><br><br>
+			<input type="checkbox" name="useTextSpeech" onclick="document.getElementById('TtSSettings').style.display = this.checked ? 'block' : 'none'; document.getElementById('sayB').style.display = this.checked ? 'inline-block' : 'none';"><label class="bld">Синтез речи</label>
+
+			<div id="TtSSettings" style="display: none;"><br>
+				<label class="bld">Голос</label><br><!-- <br> -->
+				<input checked type="radio" name="voice" value="zahar"><label>Zahar (мужской)</label><br>
+				<input type="radio" name="voice" value="ermil"><label>Ermil (мужской)</label><br>
+				<input type="radio" name="voice" value="omazh"><label>Оmazh (женский)</label><br>
+				<input type="radio" name="voice" value="jane"><label>Jane (женский)</label><br><br>
+				<label class="bld">Эмоциональная окраска</label><br><!-- <br> -->
+				<input type="radio" name="emotion" value="neutral"><label>Нейтральный</label><br>
+				<input type="radio" name="emotion" value="good"><label>Доброжелательный</label><br>
+				<input checked type="radio" name="emotion" value="evil"><label>Злой</label><br><br>
+				<label class="bld">Скорость</label><br><!-- <br> -->
+				<input type="range" name="speed" min="2" max="25" step="1" value="10" style="width: 100%">
+			</div>
+			
+			<!--<br><br><label class="bld">Цвет интерфейса</label><br><br>-->
+			<!--<div id="colors">-->
+   <!-- 		    <button style="background-color: #F50057"></button>-->
+   <!-- 		    <button style="background-color: #FF3D00"></button>-->
+   <!-- 		    <button style="background-color: #00E676"></button>-->
+		 <!--   </div>-->
+		</div>
+
+		<div id="aaa" style="opacity: 1; display: block;" ></div>
+
+		<div class="link"><button class="btn-clipboard" data-clipboard-target="#aaa">Скопировать</button><button onclick="historyResponse.goBack();">Назад</button><button id="butt">Дальше</button><button style="display: none;" id="sayB" onclick="say();">Повторить речь</button></div>
+
+		<script src="scripts/front.js"></script>
+
+	</body>
+</html>
