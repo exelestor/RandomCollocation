@@ -1,0 +1,4 @@
+special-vendored-path/* linguist-vendored
+scripts/front.js linguist-vendored=false
+scripts/clipboard.js linguist-vendored=false
+*.html linguist-vendored=false
