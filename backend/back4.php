@@ -53,7 +53,7 @@ function writeToLog($parameters) {
     . date(" [Y-m-d H:i:s] ")
     . $resultd
     . ' '
-    . $_SERVER['HTTP_X_REAL_IP']
+    . $_SERVER['X_REAL_IP']
     . ' '
     . $_GET['pril']
     . ' '
